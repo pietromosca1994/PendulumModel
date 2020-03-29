@@ -2,7 +2,7 @@ from vpython import *
 import numpy as np
 from math import sqrt
 import matplotlib.pyplot as plt
-from pendulum import *
+from pendulum_model import *
 
 VISUAL_FLAG=False
 theta_0=0               # [rad] initial angle
@@ -22,7 +22,7 @@ F_ext=a*np.sin(2*pi*f*time)
 pend=pendulum(m, L)
 theta, omega, alpha=pend.compute_dynamics(time, theta_0, omega_0, F_ext)
 if VISUAL_FLAG==True:
-    pend.visualize(time, theta, F_ext)
+    pend.visualize_dynamics(time, theta, F_ext)
         
 fig = plt.figure()
 plt.plot(theta, color='tab:blue')
